@@ -87,5 +87,15 @@ echo 'export PATH=/usr/local/cuda-8.0/bin${PATH:+:${PATH}}' >> ~/.bashrc
 #----------------
 # VAGRANT
 #----------------
+wget https://releases.hashicorp.com/vagrant/1.9.0/vagrant_1.9.0_x86_64.deb
+sudo dpkg -i vagrant_1.9.0_x86_64.deb
+rm vagrant_1.9.0_x86_64.deb
 
-
+#----------------
+# VIRTUALBOX
+#----------------
+# Alternative: adding ppa (https://www.virtualbox.org/wiki/Linux_Downloads) 
+wget http://download.virtualbox.org/virtualbox/5.1.10/virtualbox-5.1_5.1.10-112026~Ubuntu~xenial_amd64.deb
+sudo dpkg -i virtualbox-5.1_5.1.10-112026~Ubuntu~xenial_amd64.deb
+rm virtualbox-5.1_5.1.10-112026~Ubuntu~xenial_amd64.deb
+sudo apt-get install dkms
