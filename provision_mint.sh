@@ -84,3 +84,8 @@ sudo apt-get update
 sudo apt-get install cuda
 echo 'export PATH=/usr/local/cuda-8.0/bin${PATH:+:${PATH}}' >> ~/.bashrc
 
+#----------------
+# VAGRANT
+#----------------
+
+
