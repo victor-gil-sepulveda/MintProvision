@@ -1,3 +1,5 @@
+#pycharm
+
 # In firefox:
 # - add Google search
 # - add tab plugin (Tab Wheel Scroll)
@@ -8,6 +10,11 @@ sudo apt-get update
 # MUSIC PLAYER
 #----------------
 sudo apt install clementine
+
+#----------------
+# tkdiff
+#----------------
+sudo apt install tkcvs
 
 #----------------
 # PRINTER
@@ -47,6 +54,15 @@ rm -rf gmp-6.1.1
 # PYTHON
 #----------------
 sudo apt install ipython
+
+#----------------
+# R
+#----------------
+sudo apt install r-base-core libjpeg62 r-cran-rcurl
+
+wget https://download1.rstudio.org/rstudio-1.0.44-amd64.deb
+sudo dpkg -i rstudio-1.0.44-amd64.deb
+rm rstudio-1.0.44-amd64.deb
 
 #----------------
 # GIT
@@ -99,3 +115,4 @@ wget http://download.virtualbox.org/virtualbox/5.1.10/virtualbox-5.1_5.1.10-1120
 sudo dpkg -i virtualbox-5.1_5.1.10-112026~Ubuntu~xenial_amd64.deb
 rm virtualbox-5.1_5.1.10-112026~Ubuntu~xenial_amd64.deb
 sudo apt-get install dkms
+
