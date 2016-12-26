@@ -7,9 +7,10 @@
 sudo apt-get update
 
 #----------------
-# MUSIC PLAYER
+# SOFTWARE
 #----------------
 sudo apt install clementine
+sudo apt install inkscape
 
 #----------------
 # tkdiff
@@ -54,6 +55,12 @@ rm -rf gmp-6.1.1
 # PYTHON
 #----------------
 sudo apt install ipython
+sudo apt install python-pip
+sudo pip install --upgrade pip
+sudo pip install setuptools
+# For the blog manage script
+sudo pip install clip
+sudo pip install python-vagrant
 
 #----------------
 # R
@@ -106,6 +113,8 @@ echo 'export PATH=/usr/local/cuda-8.0/bin${PATH:+:${PATH}}' >> ~/.bashrc
 wget https://releases.hashicorp.com/vagrant/1.9.0/vagrant_1.9.0_x86_64.deb
 sudo dpkg -i vagrant_1.9.0_x86_64.deb
 rm vagrant_1.9.0_x86_64.deb
+#plugin
+vagrant plugin install vagrant-triggers
 
 #----------------
 # VIRTUALBOX
