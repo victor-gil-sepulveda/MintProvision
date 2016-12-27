@@ -58,9 +58,48 @@ sudo apt install ipython
 sudo apt install python-pip
 sudo pip install --upgrade pip
 sudo pip install setuptools
+
 # For the blog manage script
-sudo pip install clip
 sudo pip install python-vagrant
+git clone https://github.com/willyg302/clip.py.git
+cd clip.py/
+sudo python setup.py install
+cd ..
+sudo rm -rf clip.py
+sudo pip install ghp-import
+
+# seaborn, matplotlib, pandas and numpy
+sudo pip install seaborn
+sudo apt-get install python-tk
+
+#----------------
+# Youtube downloads
+#----------------
+sudo pip install --upgrade youtube-dl
+sudo apt install ffmpeg lame
+mkdir ~/bin
+cat > ~/bin/youtube2mp3 << 'EOF'
+#!/bin/bash 
+# A very simple Bash script to download a YouTube video 
+# and extract the music file from it. 
+address=$1 
+regex='v=(.*)' 
+if [[ $address =~ $regex ]]; then 
+video_id=${BASH_REMATCH[1]}
+video_id=$(echo $video_id | cut -d'&' -f1) 
+video_title="$(youtube-dl --get-title $address)" 
+youtube-dl $address 
+ext="flv" 
+ffmpeg -i $video_id.$ext "$video_title".wav 
+lame "$video_title".wav "$video_title".mp3 
+rm $video_id.$ext "$video_title".wav 
+else 
+echo "Sorry but the system encountered a problem." 
+fi
+
+EOF
+
+chmod +x ~/bin/youtube2mp3
 
 #----------------
 # R
